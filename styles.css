@@ -134,6 +134,7 @@ img { max-width: 100%; display: block; }
   gap: 12px;
   text-decoration: none;
   color: var(--header-text);
+  flex-shrink: 0;
 }
 .brand-mark { height: 30px; width: auto; flex-shrink: 0; }
 .brand-sub {
