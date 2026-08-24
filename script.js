@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
       showImage();
     }
 
-    document.querySelectorAll('.apt-gallery').forEach(function (gallery) {
+    document.querySelectorAll('[data-gallery-id]').forEach(function (gallery) {
       var galleryId = gallery.getAttribute('data-gallery-id');
       gallery.querySelectorAll('a').forEach(function (link) {
         link.addEventListener('click', function (e) {
