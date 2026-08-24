@@ -293,7 +293,12 @@ section { padding: 96px 0; }
 @media (max-width: 640px) {
   section { padding: 64px 0; }
   .wrap { padding: 0 20px; }
-  .hero-inner { padding-top: 76px; padding-bottom: 64px; }
+    .hero { min-height: calc(100dvh - 76px); display: flex; align-items: center; }
+  .hero-inner { padding-top: 32px; padding-bottom: 32px; }
+  .hero .eyebrow { font-size: 12px; }
+  .hero h1 { font-size: clamp(30px, 9vw, 40px); margin-top: 12px; }
+  .hero p.lead { font-size: 15.5px; margin: 14px 0 22px; }
+  .hero .hero-actions { gap: 10px; }
   .apt-body { padding: 28px 24px; }
   .kontakt-box { padding: 28px 22px; }
 }
