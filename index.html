@@ -104,10 +104,10 @@
     <!-- WOHNUNG 1 -->
     <article class="apt-card reveal">
       <div class="apt-grid">
-        <div class="apt-gallery">
-          <a href="#"><img src="https://picsum.photos/seed/wohnung1a/700/900" alt="Wohnzimmer Wohnung 1 — Platzhalterfoto, bitte ersetzen"></a>
-          <a href="#"><img src="https://picsum.photos/seed/wohnung1b/500/440" alt="Küche Wohnung 1 — Platzhalterfoto, bitte ersetzen"></a>
-          <a href="#"><img src="https://picsum.photos/seed/wohnung1c/500/440" alt="Schlafzimmer Wohnung 1 — Platzhalterfoto, bitte ersetzen"></a>
+        <div class="apt-gallery" data-gallery-id="apt1">
+          <a href="#" data-lightbox-index="0"><img src="https://picsum.photos/seed/wohnung1a/700/900" alt="Wohnzimmer Wohnung 1 — Platzhalterfoto, bitte ersetzen"></a>
+          <a href="#" data-lightbox-index="1"><img src="https://picsum.photos/seed/wohnung1b/500/440" alt="Küche Wohnung 1 — Platzhalterfoto, bitte ersetzen"></a>
+          <a href="#" data-lightbox-index="2"><img src="https://picsum.photos/seed/wohnung1c/500/440" alt="Schlafzimmer Wohnung 1 — Platzhalterfoto, bitte ersetzen"></a>
         </div>
         <div class="apt-body">
           <div class="apt-name-row">
@@ -142,10 +142,10 @@
     <!-- WOHNUNG 2 -->
     <article class="apt-card reveal">
       <div class="apt-grid">
-        <div class="apt-gallery">
-          <a href="#"><img src="https://picsum.photos/seed/wohnung2a/700/900" alt="Wohnzimmer Wohnung 2 — Platzhalterfoto, bitte ersetzen"></a>
-          <a href="#"><img src="https://picsum.photos/seed/wohnung2b/500/440" alt="Küche Wohnung 2 — Platzhalterfoto, bitte ersetzen"></a>
-          <a href="#"><img src="https://picsum.photos/seed/wohnung2c/500/440" alt="Schlafzimmer Wohnung 2 — Platzhalterfoto, bitte ersetzen"></a>
+        <div class="apt-gallery" data-gallery-id="apt2">
+          <a href="#" data-lightbox-index="0"><img src="https://picsum.photos/seed/wohnung2a/700/900" alt="Wohnzimmer Wohnung 2 — Platzhalterfoto, bitte ersetzen"></a>
+          <a href="#" data-lightbox-index="1"><img src="https://picsum.photos/seed/wohnung2b/500/440" alt="Küche Wohnung 2 — Platzhalterfoto, bitte ersetzen"></a>
+          <a href="#" data-lightbox-index="2"><img src="https://picsum.photos/seed/wohnung2c/500/440" alt="Schlafzimmer Wohnung 2 — Platzhalterfoto, bitte ersetzen"></a>
         </div>
         <div class="apt-body">
           <div class="apt-name-row">
@@ -307,6 +307,37 @@
   </div>
 </footer>
 
+<!-- Lightbox für die Foto-Galerien -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Schließen">✕</button>
+  <button class="lightbox-arrow lightbox-prev" id="lightboxPrev" aria-label="Vorheriges Bild">‹</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <button class="lightbox-arrow lightbox-next" id="lightboxNext" aria-label="Nächstes Bild">›</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+</div>
+
+<script>
+  // Bilder pro Wohnung für die Lightbox. Die ersten 3 entsprechen den Rasterbildern,
+  // alle weiteren sind zusätzliche Fotos, die NUR beim Durchswipen in der Lightbox erscheinen.
+  var galleryImages = {
+    apt1: [
+      "https://picsum.photos/seed/wohnung1a/1400/1000",
+      "https://picsum.photos/seed/wohnung1b/1400/1000",
+      "https://picsum.photos/seed/wohnung1c/1400/1000",
+      "https://picsum.photos/seed/wohnung1d/1400/1000",
+      "https://picsum.photos/seed/wohnung1e/1400/1000",
+      "https://picsum.photos/seed/wohnung1f/1400/1000"
+    ],
+    apt2: [
+      "https://picsum.photos/seed/wohnung2a/1400/1000",
+      "https://picsum.photos/seed/wohnung2b/1400/1000",
+      "https://picsum.photos/seed/wohnung2c/1400/1000",
+      "https://picsum.photos/seed/wohnung2d/1400/1000",
+      "https://picsum.photos/seed/wohnung2e/1400/1000",
+      "https://picsum.photos/seed/wohnung2f/1400/1000"
+    ]
+  };
+</script>
 <script src="script.js"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
