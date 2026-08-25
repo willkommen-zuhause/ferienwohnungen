@@ -570,3 +570,18 @@ footer a:hover { text-decoration: underline; }
   font-weight: 600;
   color: var(--brick-dark);
 }
+.kontakt-icons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.kontakt-icons .btn {
+  padding: 16px 30px;
+}
+@media (max-width: 640px) {
+  .kontakt-icons {
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+}
