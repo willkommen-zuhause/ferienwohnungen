@@ -580,8 +580,11 @@ footer a:hover { text-decoration: underline; }
 }
 @media (max-width: 640px) {
   .kontakt-icons {
-    justify-content: center;
-    gap: 20px;
+    gap: 16px;
     margin-bottom: 30px;
+  }
+  .kontakt-icons .btn {
+    flex: 1;
+    justify-content: center;
   }
 }
