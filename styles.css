@@ -318,6 +318,7 @@ section { padding: 96px 0; }
 
 /* ---------- Intro / Story ---------- */
 .story-text { max-width: 68ch; margin-bottom: 52px; }
+.story-text h2 { margin-top: 14px; }
 .story-text p { font-size: 17.5px; }
 
 .hof-gallery {
