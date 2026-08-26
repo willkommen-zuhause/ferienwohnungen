@@ -48,18 +48,25 @@ document.addEventListener('DOMContentLoaded', function () {
       lightboxImg.src = currentImages[currentIndex];
       lightboxCounter.textContent = (currentIndex + 1) + ' / ' + currentImages.length;
     }
+        var scrollPosition = 0;
     function openLightbox(galleryId, startIndex) {
       currentImages = galleryImages[galleryId];
       currentIndex = startIndex;
       showImage();
       lightbox.classList.add('is-open');
       lightbox.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
+      scrollPosition = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = '-' + scrollPosition + 'px';
+      document.body.style.width = '100%';
     }
     function closeLightbox() {
       lightbox.classList.remove('is-open');
       lightbox.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      window.scrollTo(0, scrollPosition);
     }
     function nextImage() {
       currentIndex = (currentIndex + 1) % currentImages.length;
@@ -94,10 +101,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Swipe-Geste für Mobilgeräte
-    var touchStartX = 0;
+        var touchStartX = 0;
     lightbox.addEventListener('touchstart', function (e) {
       touchStartX = e.changedTouches[0].screenX;
     }, { passive: true });
+    lightbox.addEventListener('touchmove', function (e) {
+      e.preventDefault();
+    }, { passive: false });
     lightbox.addEventListener('touchend', function (e) {
       var touchEndX = e.changedTouches[0].screenX;
       var diff = touchEndX - touchStartX;
