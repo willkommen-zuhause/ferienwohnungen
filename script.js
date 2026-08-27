@@ -116,4 +116,11 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }, { passive: true });
   }
+    // Bilder vor einfachem Rechtsklick-Speichern und Wegziehen schützen
+  document.addEventListener('contextmenu', function (e) {
+    if (e.target.tagName === 'IMG') { e.preventDefault(); }
+  });
+  document.addEventListener('dragstart', function (e) {
+    if (e.target.tagName === 'IMG') { e.preventDefault(); }
+  });
 });
