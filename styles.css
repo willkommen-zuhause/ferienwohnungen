@@ -597,8 +597,9 @@ img {
 .has-owl { position: relative; }
 .owl-peek {
   position: absolute;
-  top: -34px;
-  right: 190px;
+  top: -60px;
+  left: 75%;
+  transform: translateX(-50%);
   width: 90px;
   height: 90px;
   object-fit: contain;
@@ -606,5 +607,5 @@ img {
   pointer-events: none;
 }
 @media (max-width: 640px) {
-  .owl-peek { width: 60px; height: 60px; top: -20px; right: 16px; }
+  .owl-peek { width: 60px; height: 60px; top: -40px; }
 }
