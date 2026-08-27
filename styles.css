@@ -600,8 +600,8 @@ img {
   top: -60px;
   left: 75%;
   transform: translateX(-50%);
-  width: 180px;
-  height: 180px;
+  width: 135px;
+  height: 135px;
   object-fit: contain;
   z-index: 5;
   pointer-events: none;
