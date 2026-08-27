@@ -599,7 +599,6 @@ img {
   position: absolute;
   top: -60px;
   left: 75%;
-  transform: translateX(-50%);
   width: 180px;
   height: 180px;
   object-fit: contain;
