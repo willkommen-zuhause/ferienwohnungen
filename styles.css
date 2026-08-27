@@ -606,6 +606,6 @@ img {
   z-index: 5;
   pointer-events: none;
 }
-@media (max-width: 640px) {
-  .owl-peek { width: 60px; height: 60px; top: -100px; }
+@media (max-width: 1280px) {
+  .owl-peek { width: 60px; height: 60px; top: -40px; }
 }
