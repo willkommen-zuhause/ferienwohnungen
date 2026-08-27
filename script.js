@@ -123,4 +123,17 @@ document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('dragstart', function (e) {
     if (e.target.tagName === 'IMG') { e.preventDefault(); }
   });
+  // Eule einmalig abspielen, sobald die Eulennest-Karte sichtbar wird
+  var owl = document.querySelector('.owl-peek');
+  if (owl && 'IntersectionObserver' in window) {
+    var owlObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          owl.src = owl.getAttribute('data-src');
+          owlObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    owlObserver.observe(owl);
+  }
 });
