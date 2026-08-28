@@ -597,7 +597,7 @@ img {
 .has-owl { position: relative; }
 .owl-peek {
   position: absolute;
-  top: -360px;
+  top: -160px;
   left: 69%;
   transform: translateX(-50%);
   width: 90px;
