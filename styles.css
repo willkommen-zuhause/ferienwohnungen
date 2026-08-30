@@ -596,15 +596,15 @@ img {
 } 
 .has-owl { position: relative; }
 .owl-peek {
-  position: absolute;
-  top: -160px;
-  left: 69%;
-  transform: translateX(-50%);
-  width: 90px;
-  height: 90px;
-  object-fit: contain;
-  z-index: 5;
-  pointer-events: none;
+    position: absolute;
+    top: -149px;
+    left: 73%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    z-index: 5;
+    pointer-events: none;
 }
 @media (max-width: 640px) {
   .owl-peek { width: 60px; height: 60px; top: -40px; }
