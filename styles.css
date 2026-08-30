@@ -594,7 +594,7 @@ img {
   user-select: none;
   -webkit-touch-callout: none;
 } 
-.has-owl { position: relative; }
+.has-owl { position: relative; margin-bottom: 40px; }
 .owl-peek {
     position: absolute;
     top: -149px;
