@@ -126,11 +126,10 @@ document.addEventListener('DOMContentLoaded', function () {
    // Eule alle 60 Sekunden kurz auftauchen lassen, sobald man bei der Karte vorbeigescrollt ist
   var owl = document.querySelector('.owl-peek');
   if (owl && 'IntersectionObserver' in window) {
-    function playOwl() {
+        function playOwl() {
       var src = owl.getAttribute('data-src');
       owl.style.opacity = '1';
-      owl.src = '';
-      setTimeout(function () { owl.src = src; }, 20);
+      owl.src = src + '?t=' + Date.now();
       setTimeout(function () { owl.style.opacity = '0'; }, 5000);
     }
    var owlObserver = new IntersectionObserver(function (entries) {
