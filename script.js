@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (entry.isIntersecting) {
           setTimeout(function () {
             playOwl();
-            setInterval(playOwl, 30000);
+            setInterval(playOwl, 10000);
           }, 500);
           owlObserver.unobserve(entry.target);
         }
