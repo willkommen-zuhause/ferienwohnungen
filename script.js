@@ -128,9 +128,11 @@ document.addEventListener('DOMContentLoaded', function () {
   if (owl && 'IntersectionObserver' in window) {
         function playOwl() {
       var src = owl.getAttribute('data-src');
-      owl.style.opacity = '1';
+      owl.onload = function () {
+        owl.style.opacity = '1';
+        setTimeout(function () { owl.style.opacity = '0'; }, 3600);
+      };
       owl.src = src + '?t=' + Date.now();
-      setTimeout(function () { owl.style.opacity = '0'; }, 3600);
     }
    var owlObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
