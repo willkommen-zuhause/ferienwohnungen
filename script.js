@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
       owl.style.opacity = '1';
       owl.src = '';
       setTimeout(function () { owl.src = src; }, 20);
-      setTimeout(function () { owl.style.opacity = '0'; }, 3000);
+      setTimeout(function () { owl.style.opacity = '0'; }, 5000);
     }
    var owlObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
