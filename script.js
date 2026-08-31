@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var src = owl.getAttribute('data-src');
       owl.style.opacity = '1';
       owl.src = src + '?t=' + Date.now();
-      setTimeout(function () { owl.style.opacity = '0'; }, 4000);
+      setTimeout(function () { owl.style.opacity = '0'; }, 3750);
     }
    var owlObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
           setTimeout(function () {
             playOwl();
             setInterval(playOwl, 30000);
-          }, 1000);
+          }, 500);
           owlObserver.unobserve(entry.target);
         }
       });
