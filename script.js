@@ -123,13 +123,21 @@ document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('dragstart', function (e) {
     if (e.target.tagName === 'IMG') { e.preventDefault(); }
   });
-  // Eule einmalig abspielen, sobald die Eulennest-Karte sichtbar wird
+   // Eule alle 60 Sekunden kurz auftauchen lassen, sobald man bei der Karte vorbeigescrollt ist
   var owl = document.querySelector('.owl-peek');
   if (owl && 'IntersectionObserver' in window) {
+    function playOwl() {
+      var src = owl.getAttribute('data-src');
+      owl.style.opacity = '1';
+      owl.src = '';
+      setTimeout(function () { owl.src = src; }, 20);
+      setTimeout(function () { owl.style.opacity = '0'; }, 3000);
+    }
     var owlObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          owl.src = owl.getAttribute('data-src');
+          playOwl();
+          setInterval(playOwl, 60000);
           owlObserver.unobserve(entry.target);
         }
       });
