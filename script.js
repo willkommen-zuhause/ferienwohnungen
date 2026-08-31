@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var src = owl.getAttribute('data-src');
       owl.onload = function () {
         owl.style.opacity = '1';
-        setTimeout(function () { owl.style.opacity = '0'; }, 3500);
+        setTimeout(function () { owl.style.opacity = '0'; }, 3400);
       };
       owl.src = src + '?t=' + Date.now();
     }
