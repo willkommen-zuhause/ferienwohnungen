@@ -133,11 +133,13 @@ document.addEventListener('DOMContentLoaded', function () {
       setTimeout(function () { owl.src = src; }, 20);
       setTimeout(function () { owl.style.opacity = '0'; }, 3000);
     }
-    var owlObserver = new IntersectionObserver(function (entries) {
+   var owlObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          playOwl();
-          setInterval(playOwl, 30000);
+          setTimeout(function () {
+            playOwl();
+            setInterval(playOwl, 30000);
+          }, 3000);
           owlObserver.unobserve(entry.target);
         }
       });
