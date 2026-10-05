@@ -610,3 +610,14 @@ img {
 @media (max-width: 640px) {
   .owl-peek { width: 120px; height: 120px; top: -118px; }
 }
+.hero-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: url('leaf-pattern.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.12;
+  z-index: 1;
+  pointer-events: none;
+}
