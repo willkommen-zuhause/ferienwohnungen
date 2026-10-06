@@ -278,10 +278,10 @@ nav.main-nav a.nav-link:hover { opacity: 1; }
   margin: 20px 0 34px;
 }
 .hero .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-.hero-actions .btn-primary {
+/*.hero-actions .btn-primary {
   padding: 18px 34px;
   font-size: 16.5px;
-}
+}*/
 .hero .eyebrow { color: var(--gold); }
 
 /* ---------- Sections ---------- */
