@@ -449,14 +449,14 @@ section { padding: 96px 0; }
 .apt-name-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 .apt-body h3 { font-size: 27px; }
 .apt-tag {
-  font-size: 12.5px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 15px;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--brick);
   border: 1px solid var(--brick);
-  border-radius: 20px;
-  padding: 4px 12px;
+  border-radius: var(--radius);
+  padding: 13px 24px;
   white-space: nowrap;
   flex-shrink: 0;
 }
