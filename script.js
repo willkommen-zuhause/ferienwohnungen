@@ -148,3 +148,24 @@ document.addEventListener('DOMContentLoaded', function () {
     owlObserver.observe(owl);
   }
 });
+
+  // "Weiterlesen"-Buttons für lange Beschreibungstexte
+  document.querySelectorAll('.apt-desc.is-collapsible').forEach(function (desc) {
+    var btn = desc.nextElementSibling;
+    if (!btn || !btn.classList.contains('read-more')) return;
+
+    // Button nur zeigen, wenn der Text wirklich abgeschnitten wird
+    function checkOverflow() {
+      if (desc.classList.contains('is-collapsed')) {
+        btn.hidden = desc.scrollHeight <= desc.clientHeight + 1;
+      }
+    }
+    checkOverflow();
+    window.addEventListener('resize', checkOverflow);
+
+    btn.addEventListener('click', function () {
+      var collapsed = desc.classList.toggle('is-collapsed');
+      btn.textContent = collapsed ? 'Weiterlesen' : 'Weniger anzeigen';
+      btn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+    });
+  });
