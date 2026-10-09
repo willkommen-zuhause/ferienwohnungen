@@ -620,25 +620,19 @@ img {
   pointer-events: none;
 }
 
-.apt-desc.is-collapsed {
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
 .read-more {
   align-self: flex-start;
   background: none;
   border: none;
   padding: 0;
-  margin: -4px 0 20px;
+  margin: -6px 0 28px;
   font-family: inherit;
   font-size: 14.5px;
   font-weight: 600;
   color: var(--brick);
   text-decoration: underline;
-  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
   cursor: pointer;
 }
 .read-more:hover { color: var(--brick-dark); }
