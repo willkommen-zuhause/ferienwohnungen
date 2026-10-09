@@ -149,23 +149,14 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-  // "Weiterlesen"-Buttons für lange Beschreibungstexte
-  document.querySelectorAll('.apt-desc.is-collapsible').forEach(function (desc) {
-    var btn = desc.nextElementSibling;
-    if (!btn || !btn.classList.contains('read-more')) return;
-
-    // Button nur zeigen, wenn der Text wirklich abgeschnitten wird
-    function checkOverflow() {
-      if (desc.classList.contains('is-collapsed')) {
-        btn.hidden = desc.scrollHeight <= desc.clientHeight + 1;
-      }
-    }
-    checkOverflow();
-    window.addEventListener('resize', checkOverflow);
-
+  // "Weiterlesen"-Link für lange Beschreibungstexte
+  document.querySelectorAll('.read-more').forEach(function (btn) {
+    var more = btn.previousElementSibling.querySelector('.desc-more');
+    if (!more) return;
     btn.addEventListener('click', function () {
-      var collapsed = desc.classList.toggle('is-collapsed');
-      btn.textContent = collapsed ? 'Weiterlesen' : 'Weniger anzeigen';
-      btn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+      var wasHidden = more.hidden;
+      more.hidden = !wasHidden;
+      btn.textContent = wasHidden ? 'Weniger anzeigen' : 'Weiterlesen';
+      btn.setAttribute('aria-expanded', wasHidden ? 'true' : 'false');
     });
   });
